@@ -1,0 +1,23 @@
+# NÃO ALTERAR, de uso da ALFASOFT!
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteCond %{THE_REQUEST} /_ping [NC]
+RewriteRule ^ - [R=200]
+</IfModule>
+# NÃO ALTERAR, de uso da ALFASOFT!
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteCond %{THE_REQUEST} /_ping [NC]
+RewriteRule ^ - [R=200]
+</IfModule>
+# BEGIN WordPress
+
+RewriteEngine On
+RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+RewriteBase /
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.php [L]
+
+# END WordPress
